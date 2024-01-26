@@ -10,7 +10,8 @@
 -export([start/2, stop/1]).
 
 start(_StartType, _StartArgs) ->
-    simple_sup:start_link().
+    simple_sup:start_link(),
+    application:start(large).
 
 stop(_State) ->
     ok.
