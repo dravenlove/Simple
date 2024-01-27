@@ -26,11 +26,18 @@ start() ->
     %% process register and search
     {ok, _} = application:ensure_all_started(gproc),
     application:start(jiffy),
+    application:start(lager),
     application:start(simple).
 
 %% todo
 stop() ->
-    ok.
+    application:stop(simple),
+    application:stop(lager),
+    application:stop(jiffy),
+    application:stop(gproc),
+    application:stop(os_mon),
+    application:stop(crypto),
+    application:stop(sasl).
 
 exec() ->
     [Node, Mod, Func] = init:get_plain_arguments(),
