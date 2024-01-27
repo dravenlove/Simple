@@ -28,7 +28,7 @@ start() ->
     application:start(jiffy),
     application:start(simple).
 
-%% todo 
+%% todo
 stop() ->
     ok.
 

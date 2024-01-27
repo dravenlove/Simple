@@ -30,7 +30,7 @@ init([]) ->
                  intensity => 0,
                  period => 1},
     ChildSpecs = [
-        {websocket, {websocket_app}}
+
     ],
     {ok, {SupFlags, ChildSpecs}}.
 
