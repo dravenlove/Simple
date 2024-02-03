@@ -7,6 +7,7 @@
 %%% Created : 27. 1月 2024 15:24
 %%%-------------------------------------------------------------------
 -author("Administrator").
+-compile([{parse_transform, lager_transform}]).
 
 -ifndef(LOG_HRL).
 -define(LOG_HRL, true).

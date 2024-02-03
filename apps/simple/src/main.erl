@@ -31,13 +31,13 @@ start() ->
 
 %% todo
 stop() ->
-    application:stop(simple),
     application:stop(lager),
     application:stop(jiffy),
     application:stop(gproc),
     application:stop(os_mon),
     application:stop(crypto),
-    application:stop(sasl).
+    application:stop(sasl),
+    application:stop(simple).
 
 exec() ->
     [Node, Mod, Func] = init:get_plain_arguments(),

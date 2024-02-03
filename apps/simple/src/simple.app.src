@@ -5,11 +5,16 @@
   {mod, {simple_app, []}},
   {applications,
    [kernel,
-    stdlib
+    stdlib,
+    lager,
+    jiffy,
+    gproc,
+    os_mon,
+    crypto,
+    sasl
    ]},
   {env,[]},
   {modules, []},
-
   {licenses, ["Apache-2.0"]},
   {links, []}
  ]}.
