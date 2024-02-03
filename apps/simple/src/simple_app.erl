@@ -20,13 +20,13 @@ stop(_State) ->
 
 init_mysql() ->
 
-    {ok, Host} = application:get_env(mysql, host, "127.0.0.1"),
-    {ok, Port} = application:get_env(mysql, port, 3306),
-    {ok, User} = application:get_env(mysql, user, "root"),
-    {ok, Password} = application:get_env(mysql, password, "123456"),
-    {ok, Database} = application:get_env(mysql, database, "game1"),
-    {ok, Size} = application:get_env(mysql, size, 10),
-    {ok, Encode} = application:get_env(mysql, encode, 'utf8'),
+    Host = application:get_env(mysql, host, "127.0.0.1"),
+    Port = application:get_env(mysql, port, 3306),
+    User = application:get_env(mysql, user, "root"),
+    Password = application:get_env(mysql, password, "123456"),
+    Database = application:get_env(mysql, database, "game1"),
+    Size = application:get_env(mysql, size, 10),
+    Encode = application:get_env(mysql, encode, 'utf8'),
     simple_mysql:start(Host, Port, User, Password, Database, Encode, Size),
     ok.
 

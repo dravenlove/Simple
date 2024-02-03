@@ -8,8 +8,8 @@
 %%%-------------------------------------------------------------------
 -module(simple_mysql).
 -author("Administrator").
--include("emysql.hrl").
--include("../include/log.hrl").
+-include("simple_mysql.hrl").
+-include("log.hrl").
 
 
 %% API
