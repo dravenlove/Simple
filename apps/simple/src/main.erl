@@ -25,8 +25,11 @@ start() ->
     application:start(os_mon),
     %% process register and search
     {ok, _} = application:ensure_all_started(gproc),
+    %% json serialize and deserialize
     application:start(jiffy),
+    %% logger
     application:start(lager),
+    %% mmo server start
     application:start(simple).
 
 %% todo
