@@ -13,9 +13,17 @@ start(_StartType, _StartArgs) ->
     init_ets(),
     init_dets(),
     init_mysql(),
+    init_net(),
     simple_sup:start_link().
 
 stop(_State) ->
+    ok.
+
+init_net() ->
+    application:start(ranch),
+    TcpAcceptor = application:get_env(simple, tcp_acceptor_num, 10),
+    TcpPort = application:get_env(simple, tcp_port, 9999),
+    {ok, _} = ranch:start_listener(simple_app, TcpAcceptor, ranch_tcp, [{port, TcpPort}], simple_net, []),
     ok.
 
 init_mysql() ->

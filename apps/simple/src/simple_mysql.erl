@@ -28,6 +28,8 @@
 
 start(Host, Port, User, Password, DataBase, Encode, Size) ->
     application:start(emysql),
+    ?INFO("emysql start!"),
+    ?INFO("~p~n!", ["test"]),
     start(?POOL_NAME, Host, Port, User, Password, DataBase, Encode, Size).
 
 start(PoolID, Host, Port, User, Password, DataBase, Encode, Size) ->

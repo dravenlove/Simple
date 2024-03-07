@@ -13,13 +13,13 @@ erlang-otp26.2.2
 
 MMO FrameWork
 ====
-1.build 
+1.build (rebar3)
 
-2.database
+2.database (emysql)
 
-3.log
+3.log (lager)
 
-4.network
+4.network(ranch/cowboy)
 
 5.sence
 
